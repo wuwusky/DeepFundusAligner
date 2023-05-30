@@ -61,7 +61,7 @@ weight_diff = 1.0
 weight_value_diff = 10.0
 
 
-model_save_dir = './pretrain_resnet50/'
+model_save_dir = './model_weight/'
 temp_save_dir = model_save_dir
 
 
@@ -71,19 +71,12 @@ temp_jsons_dir = 'stitch_infos_640_480/good_30_sim/' #98w
 # temp_jsons_dir = 'stitch_infos_640_480/good_50/' #61w
 
 
-
-
-
-
-
 if os.path.exists(model_save_dir) is False:
     os.makedirs(model_save_dir)
 
 if os.path.exists(temp_save_dir) is False:
     os.makedirs(temp_save_dir)
 
-shutil.copy('./main_cycle_ransac.py', model_save_dir+'main.py')
-shutil.copy('./model_eff.py', model_save_dir+'model.py')
 
 def mask_bin(mask):
     mask[mask<100] = 0

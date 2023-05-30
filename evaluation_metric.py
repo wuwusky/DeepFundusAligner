@@ -176,7 +176,6 @@ def eval_metric_CRP_dice_dist(data='zoc',flag=True):
     with open(temp_results_save_dir, mode='w', encoding='utf-8') as json_file:
         json.dump(score_info, json_file, ensure_ascii=False)
     
-
 def eval_metric_RM_dice_dist(data='zoc', ref_flag=True):
     if data == 'zoc':
         root_stitch_info_dir = 'E:/data_stitch/demo_test_info_zoc/'
@@ -273,8 +272,6 @@ def eval_metric_RM_dice_dist(data='zoc', ref_flag=True):
 
     with open(temp_results_save_dir, mode='w', encoding='utf-8') as json_file:
         json.dump(score_info, json_file, ensure_ascii=False)
-
-
 
 ##### ========================================================= panoramic view ==================================================================
 
@@ -604,11 +601,11 @@ def eval_metric_dice_panoramic_view(data='zoc', flag='sf', show_pad=600, ref_fla
     score_info['dists'] = list_dists_exam
 
     if flag == 'sf':
-        temp_results_save_dir = './results_panoramic_' + flag + '_'+ data +'.json'
+        temp_results_save_dir = './demo_data/results_panoramic_' + flag + '_'+ data +'.json'
     elif flag == 'dl' and ref_flag:
-        temp_results_save_dir = './results_panoramic_ref_'+ data +'.json'
+        temp_results_save_dir = './demo_data/results_panoramic_ref_'+ data +'.json'
     else:
-        temp_results_save_dir = './results_panoramic_dl_'+ data +'.json'
+        temp_results_save_dir = './demo_data/results_panoramic_dl_'+ data +'.json'
         
     with open(temp_results_save_dir, mode='w', encoding='utf-8') as json_file:
         json.dump(score_info, json_file, ensure_ascii=False)
